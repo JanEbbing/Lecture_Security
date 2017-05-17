@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+\section*{L\"osungen f\"ur Sicherheit \"Ubungsblatt 2}
+\subsection*{Aufgabe 1}
+\subsubsection*{Fall 1: Der Initialisierungsvektor wird fest gewählt}
+\emph{Anmerkung: Die Nachrichten sind prinzipiell beliebig}.\\
+Wir konstruieren einen erfolgreichen Angreifer auf ein beliebiges Blockchiffre im CBC-Modus mit festem IV.
+Unser Angreifer läuft folgendermaßen ab:
+\begin{enumerate}
+  \item Wir w\"ahlen als Nachrichten $M_0$, das nur aus Nullen besteht, sowie $M_1$, das nur aus Einsen besteht.
+  \item Nutze das Orakel, um Enc(K, $M_0$) sowie Enc(K, $M_1$) zu berechnen.
+  \item Verschl\"ussele eine zuf\"allige der beiden Nachrichten mit dem Verschl\"usselungsalgorithmus.
+  \item Nach Konstruktion muss das Chiffrat, das der Angreifer erhält, genau eines der zwei sein, die er vorher berechnet hat. Gebe den dazu geh\"origen Klartext aus.
+\end{enumerate}
+Dieser Angreifer gewinnt das IND-CPA-Spiel immer.
+
+\end{document}
