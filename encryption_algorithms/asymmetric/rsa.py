@@ -53,7 +53,20 @@ def _random_prime_of_length(k):
     while not isPrime(candidate):
         candidate = get_odd_random(k)
     return candidate
-    
+
+def encrypt_string(public_key, str_to_send):
+    message = [ord(c) for c in str_to_send]
+    chiffre = []
+    for ordc in message:
+        chiffre.append(RSA.encryption(public_key, ordc))
+    return chiffre
+
+def decrypt_string(private_key, list_of_chiffres):
+    cleartext = []
+    for chiff in list_of_chiffres:
+        cleartext.append(RSA.decryption(private_key, chiff))
+    return ''.join(chr(ordc) for ordc in cleartext)
+
 class RSA(object):
     """implements the RSA encryption algorithm. Please do not use this to encrypt anything remotely serious."""
     @classmethod

@@ -1,4 +1,4 @@
-from asymmetric.rsa import RSA
+from asymmetric.rsa import RSA, encrypt_string, decrypt_string
 
 import random
 import os
@@ -101,6 +101,10 @@ class EncryptionTests(unittest.TestCase):
 
     def test_send_messages_rsa(self):
         self.send_messages(self.scenario_rsa)
+
+    def test_send_strings_rsa(self):
+        message = "My super complicated test message.\n I love RSA!"
+        self.assertEquals(decrypt_string(self.scenario_rsa.sk_bob, encrypt_string(self.scenario_rsa.pk_bob, message)), message, "Error: Decryption of encryption does not match clear text!")
 
     @unittest.skip("not implemented")
     def test_send_messages_des(self):
