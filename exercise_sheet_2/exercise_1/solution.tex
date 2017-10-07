@@ -18,4 +18,19 @@ Unser Angreifer läuft folgendermaßen ab:
 \end{enumerate}
 Dieser Angreifer gewinnt das IND-CPA-Spiel immer.
 
+\subsubsection*{Fall 2: IV wird fest gewählt und bei jeder Verschlüsselung um 1 hochgezählt.}
+\emph{Anmerkung: \textasciitilde{}(W) bezeichne das bitweise Komplement eines Bitstrings W}\\
+Wir konstruieren einen Angreifer auf ein beliebiges Blockchiffre im CBC-Modus mit konstanter IV-Wahl, der bei jedem Verschlüsselungsvorgang um 1 erhöht wird.
+\begin{enumerate}
+  \item
+  \item
+\end{enumerate}
+\subsection*{Aufgabe 2}
+\subsection*{Aufgabe 3}
+\subsection*{Aufgabe 4}
+\begin{enumerate}
+\item WPA 2 (benutzt AES): \begin{itemize}\item Blockchiffre \item Counter Mode with CBC-MAC (CTR) \item IV im Klartext in der Nachricht: IV = Priorität (immer 0, noch), Padding, MAC-Source-Address, Package Number \item Schlüssel: Pre-shared key, den jede Station von vornherein kennen muss. Daraus werden temporäre Schlüssel berechnet die dann zur Verschlüsselung benutzt werden. \end{itemize}
+
+\end{enumerate}
+
 \end{document}
